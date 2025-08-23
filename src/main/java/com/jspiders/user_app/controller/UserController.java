@@ -62,5 +62,10 @@ public class UserController {
 		ResponseStructure<Page<User>> structure = userService.getUserByPage(pageNo);
 		return new ResponseEntity<>(structure, HttpStatus.FOUND);
 	}
+	@GetMapping("/login") // localhost:8080/user/login?email=""&password=""
+	public ResponseEntity<?> login(@RequestParam String email,@RequestParam String password ) {
+		ResponseStructure<Optional<User>> structure = userService.login(email,password);
+		return new ResponseEntity<>(structure, HttpStatus.FOUND);
+	}
 
 }

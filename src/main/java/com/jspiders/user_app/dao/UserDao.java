@@ -58,4 +58,8 @@ public class UserDao {
 		Page<User> page = userRepository.findAll(pageReqest);
 		return page;
 	}
+
+	public Optional<User> login(String email) {
+		return userRepository.findByUserEmail(email);
+	}
 }
