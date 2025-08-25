@@ -20,6 +20,8 @@ import com.jspiders.user_app.entity.User;
 import com.jspiders.user_app.service.UserService;
 import com.jspiders.user_app.util.ResponseStructure;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -28,7 +30,7 @@ public class UserController {
 	private UserService userService;
 
 	@PostMapping("/register")
-	public ResponseEntity<?> registerUser(@RequestBody User user) {
+	public ResponseEntity<?> registerUser(@Valid @RequestBody User user) {
 		ResponseStructure<User> structure = userService.registerUser(user);
 		return new ResponseEntity<>(structure, HttpStatus.CREATED);
 	}
