@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import com.jspiders.user_app.dao.UserDao;
 import com.jspiders.user_app.entity.User;
+import com.jspiders.user_app.exception.EmailNotFound;
+import com.jspiders.user_app.exception.IdNotFoundException;
 import com.jspiders.user_app.util.ResponseStructure;
 
 @Service
@@ -38,7 +40,7 @@ public class UserService {
 			structure.setStatusCode(302);
 			return structure;
 		} else {
-			throw new IllegalArgumentException("Invalid Id");
+			throw new IdNotFoundException("Invalid Id");
 		}
 	}
 
@@ -96,6 +98,6 @@ public class UserService {
 				return structure;
 			}
 		}
-		throw new IllegalArgumentException("Invalid Credential");
+		throw new EmailNotFound("Invalid Email try again!!");
 	}
 }

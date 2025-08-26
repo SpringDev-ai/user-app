@@ -29,10 +29,10 @@ public class User {
 	private String userName;
 	@Email(regexp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", message = "Invalid email format")
 	private String userEmail;
-	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$",
-			 message = "Password must contain at least one digit, one lowercase letter, "
-					 + "one uppercase letter, one special character, no whitespace, "
-					 + "and be at least 8 characters long")
+//	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$",
+//			 message = "Password must contain at least one digit, one lowercase letter, "
+//					 + "one uppercase letter, one special character, no whitespace, "
+//					 + "and be at least 8 characters long")
 	private String userPassword;
 	@Pattern(regexp = "^(\\+\\d{1,3}[- ]?)?\\d{10}$", message = "Invalid contact number")
 	private String userContact;
