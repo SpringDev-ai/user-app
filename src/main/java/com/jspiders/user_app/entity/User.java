@@ -24,7 +24,7 @@ public class User {
 //	@NotNull(message = "name can not be null")
 //	@NotEmpty(message = "name can not be Empty")
 	@NotBlank(message = "field must not contain empty,null,")
-	@Size(min = 3, max = 255)
+	@Size(min = 3)
 	@Pattern(regexp = "^[A-Za-z]*$")
 	private String userName;
 	@Email(regexp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", message = "Invalid email format")
